@@ -100,12 +100,12 @@ public class GameManage : MonoBehaviour {
 
     void IncrementPoints(EventBody eb)
     {
-        int team = ((PointsEB)eb).team;
+        Teams team = ((PointsEB)eb).team;
         float points = ((PointsEB)eb).points;
-        if(team == 1)
+        if(team == Teams.TeamOne)
         {
             pointsT1 += points;
-        } else if(team == 2)
+        } else if(team == Teams.TeamTwo)
         {
             pointsT2 += points;
         }
