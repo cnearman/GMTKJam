@@ -11,13 +11,11 @@ public class ExampleEvenTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButtonDown("Fire1"))
+        float rawSpeed = Input.GetAxisRaw("L_XAxis_1");
+        EventManager.TriggerEvent("DebugA", new MovementBody
         {
-            EventManager.TriggerEvent("DebugA");
-        }
-        if (Input.GetButtonDown("Jump"))
-        {
-            EventManager.TriggerEvent("DebugB");
-        }
+            speed = rawSpeed
+        });
+        
     }
 }

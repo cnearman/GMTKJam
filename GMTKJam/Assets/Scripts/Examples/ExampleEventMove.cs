@@ -8,19 +8,18 @@ public class ExampleEventMove : MonoBehaviour {
     void OnEnable()
     {
         EventManager.StartListening("DebugA", DebugA);
-        EventManager.StartListening("DebugB", DebugB);
     }
 
     void OnDisable()
     {
         EventManager.StopListening("DebugA", DebugA);
-        EventManager.StopListening("DebugB", DebugB);
     }
 
 
-    void DebugA()
+    void DebugA(EventBody eb)
     {
-        Debug.Log("you have debugged A");
+        float speed = ((MovementBody)eb).speed;
+        Debug.Log("you have debugged A " + speed);
     }
 
     void DebugB()
