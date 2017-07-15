@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MovementState : BasePlayerState {
     Rigidbody2D rb;
-    float acceleration = 10;
-    float maxSpeed = 3;
+    float accelerationX = 5;
+    float maxSpeedX = 5;
 
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -48,10 +48,10 @@ public class MovementState : BasePlayerState {
         var xInput = ((AxisEB)eb).value;
         if (xInput < 0)
         {
-            float targetSpeed = maxSpeed * xInput;
+            float targetSpeed = maxSpeedX * xInput;
             if (rb.velocity.x > targetSpeed)
             {
-                rb.velocity += new Vector2(-acceleration * Time.deltaTime, 0f);
+                rb.AddForce(Vector2.left * accelerationX);
             }
 
             localAnimator.SetBool("isFacingLeft", true);
@@ -59,10 +59,10 @@ public class MovementState : BasePlayerState {
         }
         else if (xInput > 0)
         {
-            float targetSpeed = maxSpeed * xInput;
+            float targetSpeed = maxSpeedX * xInput;
             if (rb.velocity.x < targetSpeed)
             {
-                rb.velocity += new Vector2(acceleration * Time.deltaTime, 0f);
+                rb.AddForce(Vector2.right * accelerationX);
             }
 
             localAnimator.SetBool("isFacingLeft", false);

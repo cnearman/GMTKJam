@@ -15,7 +15,7 @@ public class JumpState : StateMachineBehaviour {
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        if (rigidbody.velocity.y < 0 && animator.GetBool("isGrounded"))
+        if (rigidbody.velocity.y <= 0 && animator.GetBool("isGrounded"))
         {
             animator.SetTrigger("state_Landing");
         }

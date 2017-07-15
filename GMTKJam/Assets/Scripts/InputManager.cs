@@ -123,13 +123,7 @@ public class InputManager : MonoBehaviour {
             EventManager.TriggerEvent("RS_" + playerNumber + "Released", null);
         }
 
-        //L stick
-        float rawLXAxis = Input.GetAxisRaw("L_XAxis_" + playerNumber);
-        float rawLYAxis = Input.GetAxisRaw("L_YAxis_" + playerNumber);
-
-        EventManager.TriggerEvent("L_XAxis_" + playerNumber, new AxisEB { value = rawLXAxis });
-        EventManager.TriggerEvent("L_YAxis_" + playerNumber, new AxisEB { value = rawLYAxis });
-
+        
         //R Stick
         float rawRXAxis = Input.GetAxisRaw("R_XAxis_" + playerNumber);
         float rawRYAxis = Input.GetAxisRaw("R_YAxis_" + playerNumber);
@@ -152,6 +146,18 @@ public class InputManager : MonoBehaviour {
         EventManager.TriggerEvent("TriggersL_" + playerNumber, new AxisEB { value = rawTLAxis });
 
     }
+
+    void FixedUpdate()
+    {
+        //L stick
+        float rawLXAxis = Input.GetAxisRaw("L_XAxis_" + playerNumber);
+        float rawLYAxis = Input.GetAxisRaw("L_YAxis_" + playerNumber);
+
+        EventManager.TriggerEvent("L_XAxis_" + playerNumber, new AxisEB { value = rawLXAxis });
+        EventManager.TriggerEvent("L_YAxis_" + playerNumber, new AxisEB { value = rawLYAxis });
+
+    }
+
     //L_XAxis_{playerNumber}
     //L_YAxis_{playerNumber}
     //A_{playerNumber} (Bottom Button)  √
