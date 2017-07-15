@@ -167,6 +167,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 1
+  CurrentTeam: 0
+  Statistics:
+    values:
+    - name: Health
+      type: 0
+      maxValue: 12
+      initialValue: 12
+      currentValue: 12
+    - name: Speed
+      type: 1
+      maxValue: 6
+      initialValue: 6
+      currentValue: 6
 --- !u!114 &114570410021331874
 MonoBehaviour:
   m_ObjectHideFlags: 1

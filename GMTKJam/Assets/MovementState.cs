@@ -12,6 +12,7 @@ public class MovementState : BasePlayerState {
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         base.OnStateEnter(animator, stateInfo, layerIndex);
         rb = animator.gameObject.GetComponent<Rigidbody2D>();
+        maxSpeedX = animator.gameObject.GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Speed).CurrentValue;
         EventManager.StartListening("Move_" + PlayerNumber, Move);
 	}
 
