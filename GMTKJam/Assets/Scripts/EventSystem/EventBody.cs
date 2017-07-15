@@ -15,3 +15,20 @@ public class AxisEB : EventBody
 {
     public float value;
 }
+
+public class PointsEB : EventBody
+{
+    public int team;
+    public float points;
+}
+
+public class LittleNameEB : EventBody
+{
+    public string name;
+    public int team;
+}
+
+public class TeamFaintEB : EventBody
+{
+    public int team;
+}
