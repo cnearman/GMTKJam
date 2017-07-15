@@ -24,6 +24,7 @@ public class BasicLGIdle : MovementState {
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        base.OnStateExit(animator, stateInfo, layerIndex);
         EventManager.StopListening("Jump_" + PlayerNumber + "Pressed", Jump);
     }
 
