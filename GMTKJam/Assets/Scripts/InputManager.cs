@@ -14,16 +14,18 @@ public class InputManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Axis Events
+        EventManager.TriggerEvent("Move_" + playerNumber, new AxisEB { value = Input.GetAxisRaw("L_XAxis_" + playerNumber) });
+
         //Button Events
 		if(Input.GetButtonDown("A_" + playerNumber))
         {
             Debug.Log("A_" + playerNumber + "Pressed");
-            EventManager.TriggerEvent("A_" + playerNumber + "Pressed", null);
+            EventManager.TriggerEvent("Jump_" + playerNumber + "Pressed", null);
         }
         if (Input.GetButtonUp("A_" + playerNumber))
         {
             Debug.Log("A_" + playerNumber + "Released");
-            EventManager.TriggerEvent("A_" + playerNumber + "Released", null);
+            EventManager.TriggerEvent("Jump_" + playerNumber + "Released", null);
         }
 
         if (Input.GetButtonDown("B_" + playerNumber))

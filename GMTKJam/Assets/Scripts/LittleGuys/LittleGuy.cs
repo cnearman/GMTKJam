@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LittleGuy : MonoBehaviour {
 
+    public int PlayerNumber;
+
 	// Use this for initialization
 	void Start () {
 		
