@@ -7,14 +7,14 @@ public class ExampleEventMove : MonoBehaviour {
 
     void OnEnable()
     {
-        EventManager.StartListening("DebugA", DebugA);
-        EventManager.StartListening("DebugB", DebugB);
+        EventManager.StartListening("A_1Pressed", DebugA);
+        EventManager.StartListening("A_1Released", DebugB);
     }
 
     void OnDisable()
     {
-        EventManager.StopListening("DebugA", DebugA);
-        EventManager.StopListening("DebugB", DebugB);
+        EventManager.StopListening("A_1Pressed", DebugA);
+        EventManager.StopListening("A_1Released", DebugB);
     }
 
 
