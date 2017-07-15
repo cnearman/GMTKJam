@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50571004627899776}
   - component: {fileID: 95168059936954102}
   - component: {fileID: 114570410021331874}
-  - component: {fileID: 114832294669459140}
+  - component: {fileID: 114179120940613022}
   m_Layer: 9
   m_Name: BasicLG
   m_TagString: LittleGuy
@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1026171805032198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.437794, y: 0.70675546, z: 0}
+  m_LocalPosition: {x: -4.08, y: -1.171, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4380245371700902}
@@ -155,6 +155,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114179120940613022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1026171805032198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc92f57a5d36f3d43ad77c49faed5cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerNumber: 1
 --- !u!114 &114570410021331874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,18 +181,6 @@ MonoBehaviour:
   groundPoints:
   - {fileID: 4380245371700902}
   - {fileID: 4518856930278132}
---- !u!114 &114832294669459140
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1026171805032198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc92f57a5d36f3d43ad77c49faed5cc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerNumber: 1
 --- !u!212 &212210156693941294
 SpriteRenderer:
   m_ObjectHideFlags: 1
