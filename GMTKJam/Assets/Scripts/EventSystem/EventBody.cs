@@ -18,7 +18,7 @@ public class AxisEB : EventBody
 
 public class PointsEB : EventBody
 {
-    public int team;
+    public Teams team;
     public float points;
 }
 
