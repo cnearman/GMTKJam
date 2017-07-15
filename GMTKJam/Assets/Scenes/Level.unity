@@ -108,23 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &3346733 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1026171805032198, guid: 04d1f0ff9e96e6648962d2f422a89281,
-    type: 2}
-  m_PrefabInternal: {fileID: 1453568691}
---- !u!114 &3346734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 3346733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc92f57a5d36f3d43ad77c49faed5cc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerNumber: 1
 --- !u!1001 &401880773
 Prefab:
   m_ObjectHideFlags: 0
@@ -325,11 +308,6 @@ Prefab:
     - target: {fileID: 4260395621063554, guid: 04d1f0ff9e96e6648962d2f422a89281, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 95168059936954102, guid: 04d1f0ff9e96e6648962d2f422a89281,
-        type: 2}
-      propertyPath: m_ApplyRootMotion
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04d1f0ff9e96e6648962d2f422a89281, type: 2}
