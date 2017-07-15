@@ -1694,8 +1694,6 @@ MonoBehaviour:
   pointsUIT1: {fileID: 212233514}
   pointsUIT2: {fileID: 1324607431}
   rosterSize: 3
-  team1Alive: 0
-  team2Alive: 0
   team1Guys:
   - {fileID: 1547723110}
   - {fileID: 405506291}
