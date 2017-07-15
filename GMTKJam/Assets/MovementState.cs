@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MovementState : BasePlayerState {
     Rigidbody2D rb;
+    float acceleration = 10;
+    float maxSpeed = 3;
+
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -45,13 +48,25 @@ public class MovementState : BasePlayerState {
         var xInput = ((AxisEB)eb).value;
         if (xInput < 0)
         {
+            float targetSpeed = maxSpeed * xInput;
+            if (rb.velocity.x > targetSpeed)
+            {
+                rb.velocity += new Vector2(-acceleration * Time.deltaTime, 0f);
+            }
+
             localAnimator.SetBool("isFacingLeft", true);
-            rb.AddForce(Vector2.left * 6);
+            //rb.AddForce(Vector2.left * 6);
         }
-        else if ( xInput > 0)
+        else if (xInput > 0)
         {
+            float targetSpeed = maxSpeed * xInput;
+            if (rb.velocity.x < targetSpeed)
+            {
+                rb.velocity += new Vector2(acceleration * Time.deltaTime, 0f);
+            }
+
             localAnimator.SetBool("isFacingLeft", false);
-            rb.AddForce(Vector2.right * 6);
+            //rb.AddForce(Vector2.right * 6);
         } // If 0 Then face same direction
 
     }
