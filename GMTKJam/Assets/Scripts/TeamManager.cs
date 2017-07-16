@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TeamManager : MonoBehaviour {
     public List<GameObject> Team1;
@@ -30,6 +31,16 @@ public class TeamManager : MonoBehaviour {
     private const float RESERVE_HEAL_CYCLE_DURATION = 4;
     private const float POINT_DECREMENT = 5;
     private float currentCycleDuration;
+
+
+    //UI Crap
+    public Image health1p1;
+    public Image health2p1;
+    public Image health3p1;
+
+    public Image health1p2;
+    public Image health2p2;
+    public Image health3p2;
 
     public void OnEnable()
     {
@@ -115,6 +126,78 @@ public class TeamManager : MonoBehaviour {
             //Decrease Cooldowns
             currentLittleGuy.UpdateCooldowns(timePassed);
         }
+
+        //DO UI
+        if(Team1.Count > Team1Current)
+        {
+            //make current main health
+            //t1c is cur
+            health1p1.fillAmount = Team1[Team1Current].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).currentValue / Team1[Team1Current].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).maxValue;
+
+            int tempRight = Team1Current + 1;
+            if(Team1.Count > tempRight)
+            {
+                //tr is r
+                health2p1.fillAmount = Team1[tempRight].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).currentValue / Team1[tempRight].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).maxValue;
+            } else
+            {
+                tempRight = 0;
+                if(Team1.Count > tempRight)
+                {
+                    //tr is r
+                    health2p1.fillAmount = Team1[tempRight].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).currentValue / Team1[tempRight].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).maxValue;
+                }
+            }
+
+            int tempLeft = Team1Current - 1;
+            if(tempLeft < 0)
+            {
+                tempLeft = Team1.Count - 1;
+            }
+
+            if(tempLeft >= 0 && Team1.Count > tempLeft)
+            {
+                //tl is l
+                health3p1.fillAmount = Team1[tempLeft].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).currentValue / Team1[tempLeft].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).maxValue;
+            }
+        }
+
+        if (Team2.Count > Team2Current)
+        {
+            //make current main health
+            //t1c is cur
+            health1p2.fillAmount = Team2[Team2Current].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).currentValue / Team2[Team2Current].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).maxValue;
+
+            int tempRight = Team2Current + 1;
+            if (Team2.Count > tempRight)
+            {
+                //tr is r
+                health2p2.fillAmount = Team2[tempRight].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).currentValue / Team2[tempRight].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).maxValue;
+            }
+            else
+            {
+                tempRight = 0;
+                if (Team2.Count > tempRight)
+                {
+                    //tr is r
+                    health2p2.fillAmount = Team2[tempRight].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).currentValue / Team2[tempRight].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).maxValue;
+                }
+            }
+
+            int tempLeft = Team2Current - 1;
+            if (tempLeft < 0)
+            {
+                tempLeft = Team2.Count - 1;
+            }
+
+            if (tempLeft >= 0 && Team2.Count > tempLeft)
+            {
+                //tl is l
+                health3p2.fillAmount = Team2[tempLeft].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).currentValue / Team2[tempLeft].GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Health).maxValue;
+            }
+        }
+
+
     }
 
     private GameObject CreateCharacter(int characterNumber, Teams team)

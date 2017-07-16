@@ -19,7 +19,7 @@ public class LittleGuy : MonoBehaviour {
         EventManager.StartListening("Ability2_" + PlayerNumber + "_Triggered", Ability1Activated);
     }
 
-    void OnDisabled()
+    void OnDisable()
     {
         EventManager.StopListening("Damage_" + PlayerNumber, Damage);
         EventManager.StopListening("Ability1_" + PlayerNumber + "_Triggered", Ability1Activated);
