@@ -132,7 +132,7 @@ public class TeamSelection : MonoBehaviour {
 
     void Select2(EventBody eb)
     {
-        if (!p2Selections.Contains(p1CurrentSelection) && p2Selections.Count < 3)
+        if (!p2Selections.Contains(p2CurrentSelection) && p2Selections.Count < 3)
         {
             p2Selections.Add(p2CurrentSelection);
 

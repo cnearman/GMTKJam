@@ -16,8 +16,13 @@ public class InputManager : MonoBehaviour {
         //Axis Events
         EventManager.TriggerEvent("Move_" + playerNumber, new AxisEB { value = Input.GetAxisRaw("L_XAxis_" + playerNumber) });
 
+        if (Input.GetButtonDown("Start_" + playerNumber))
+        {
+            EventManager.TriggerEvent("Start_" + "Pressed", null);
+        }
+
         //Button Events
-		if(Input.GetButtonDown("A_" + playerNumber))
+        if (Input.GetButtonDown("A_" + playerNumber))
         {
             Debug.Log("A_" + playerNumber + "Pressed");
             EventManager.TriggerEvent("Jump_" + playerNumber + "Pressed", null);

@@ -80,32 +80,40 @@ public class TeamManager : MonoBehaviour {
 
     public void Update()
     {
+        var timePassed = Time.deltaTime;
+
         if (currentCycleDuration < RESERVE_HEAL_CYCLE_DURATION)
         {
-            currentCycleDuration += Time.deltaTime;
+            currentCycleDuration += timePassed;
         }
         else
         {
-            foreach (var teamMember in Team1.Union(Team2))
+            currentCycleDuration = 0;
+        }
+
+        foreach (var teamMember in Team1.Union(Team2))
+        {
+            var currentLittleGuy = teamMember.GetComponent<LittleGuy>();
+            var gameManager = FindObjectOfType<GameManage>();
+
+            //Reserve Healing
+            if (currentCycleDuration < RESERVE_HEAL_CYCLE_DURATION && !teamMember.activeInHierarchy)
             {
-                var currentLittleGuy = teamMember.GetComponent<LittleGuy>();
-                var gameManager = FindObjectOfType<GameManage>();
-                if (!teamMember.activeInHierarchy)
+                var health = currentLittleGuy.Statistics.GetAttribute(AttributeTypes.Health);
+                var points = currentLittleGuy.CurrentTeam == Teams.TeamOne ? gameManager.pointsT1 : gameManager.pointsT2;
+                if (health.CurrentValue < health.maxValue && points > POINT_DECREMENT)
                 {
-                    var health = currentLittleGuy.Statistics.GetAttribute(AttributeTypes.Health);
-                    var points = currentLittleGuy.CurrentTeam == Teams.TeamOne ? gameManager.pointsT1 : gameManager.pointsT2;
-                    if (health.CurrentValue < health.maxValue && points > POINT_DECREMENT)
+                    health.CurrentValue += 1;
+                    EventManager.TriggerEvent("IncrementPoints", new PointsEB
                     {
-                        health.CurrentValue += 1;
-                        EventManager.TriggerEvent("IncrementPoints", new PointsEB
-                        {
-                            points = -POINT_DECREMENT,
-                            team = currentLittleGuy.CurrentTeam
-                        });
-                    }
+                        points = -POINT_DECREMENT,
+                        team = currentLittleGuy.CurrentTeam
+                    });
                 }
             }
-            currentCycleDuration = 0;
+
+            //Decrease Cooldowns
+            currentLittleGuy.UpdateCooldowns(timePassed);
         }
     }
 

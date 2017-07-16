@@ -7,14 +7,23 @@ public class LittleGuy : MonoBehaviour {
     public int PlayerNumber;
     public Teams CurrentTeam;
 
+    public float Ability1CooldownMax;
+    public float Ability2CooldownMax;
+    public float ability1CooldownCurrent;
+    public float ability2CooldownCurrent;
+
     void OnEnable()
     {
         EventManager.StartListening("Damage_" + PlayerNumber, Damage);
+        EventManager.StartListening("Ability1_" + PlayerNumber + "_Triggered", Ability1Activated);
+        EventManager.StartListening("Ability2_" + PlayerNumber + "_Triggered", Ability1Activated);
     }
 
     void OnDisabled()
     {
         EventManager.StopListening("Damage_" + PlayerNumber, Damage);
+        EventManager.StopListening("Ability1_" + PlayerNumber + "_Triggered", Ability1Activated);
+        EventManager.StopListening("Ability2_" + PlayerNumber + "_Triggered", Ability1Activated);
     }
 
     void Damage(EventBody eb)
@@ -33,4 +42,35 @@ public class LittleGuy : MonoBehaviour {
     {
 
     };
+
+    public void UpdateCooldowns(float delta)
+    {
+        if(ability1CooldownCurrent > 0)
+        {
+            ability1CooldownCurrent -= delta;
+            if(ability1CooldownCurrent < 0)
+            {
+                ability1CooldownCurrent = 0;
+            }
+        }
+
+        if (ability2CooldownCurrent > 0)
+        {
+            ability2CooldownCurrent -= delta;
+            if (ability2CooldownCurrent < 0)
+            {
+                ability2CooldownCurrent = 0;
+            }
+        }
+    }
+
+    public void Ability1Activated(EventBody eb)
+    {
+        ability1CooldownCurrent = Ability1CooldownMax;
+    }
+
+    public void Ability2Activated(EventBody eb)
+    {
+        ability2CooldownCurrent = Ability2CooldownMax;
+    }
 }
