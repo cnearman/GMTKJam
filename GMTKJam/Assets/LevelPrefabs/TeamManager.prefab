@@ -33,8 +33,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1320076720628780}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.7443674, y: 4.509115, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,19 +51,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a429045f25e9b68499db6f2f801e4c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Team1:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Team2:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  Team1: []
+  Team2: []
   littleGuys:
   - {fileID: 1553794579680652, guid: 9b4c35e336eefe54fbf667143a05c4f5, type: 2}
   - {fileID: 1862665043406324, guid: 08dc8dffbf43bd144877d01f425cd01b, type: 2}
   - {fileID: 1536300973650736, guid: 7c0639935198da14f8db090337582b1d, type: 2}
   - {fileID: 1268553412700196, guid: 894afd090790bc644b80b4afb9b1a66a, type: 2}
   - {fileID: 1409112915777982, guid: d8da6636bc30da54586a6b9d56003151, type: 2}
+  - {fileID: 1265632078734150, guid: 53c90eb694556fe428dabae70aa1c6d8, type: 2}
   Team1Spawn: {fileID: 0}
   Team2Spawn: {fileID: 0}
+  teamInformation: {fileID: 1561546874750740, guid: d96da8fb17aede44bb7cac0677836dfa,
+    type: 2}
+  health1p1: {fileID: 0}
+  health2p1: {fileID: 0}
+  health3p1: {fileID: 0}
+  health1p2: {fileID: 0}
+  health2p2: {fileID: 0}
+  health3p2: {fileID: 0}
