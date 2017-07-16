@@ -2,43 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackState : BasePlayerState {
-    public float durration;
-    float currentDurration;
-
-    public GameObject attackVolume;
-    GameObject currentAV;
-    public Vector2 attackPosition;
-    public Vector2 attackPositionLeft;
+public class HitStunState : BasePlayerState
+{
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
-
-        currentAV = (GameObject)Instantiate(attackVolume, animator.gameObject.transform.position, Quaternion.identity, animator.gameObject.transform);
-
-        if (localAnimator.GetBool("isFacingLeft"))
-        {
-            currentAV.transform.localPosition = attackPositionLeft;
-            currentAV.GetComponent<AttackVolume>().left = true;
-            currentAV.SetActive(true);
-        } else
-        {
-            currentAV.transform.localPosition = attackPosition;
-            currentAV.GetComponent<AttackVolume>().left = false;
-            currentAV.SetActive(true);
-        }
-        currentDurration = 0f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        currentDurration += Time.deltaTime;
-        if(currentDurration >= durration)
+        animator.SetFloat("stunTime", animator.GetFloat("stunTime") - Time.deltaTime);
+        if(animator.GetFloat("stunTime") <= 0f)
         {
-            localAnimator.SetTrigger("state_AttackCooldown");
+            if(animator.GetBool("isGrounded"))
+            {
+                animator.SetTrigger("state_Idle");
+            } else
+            {
+                animator.SetTrigger("state_falling");
+            }
         }
     }
 
@@ -46,7 +31,7 @@ public class AttackState : BasePlayerState {
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
-        Destroy(currentAV);
+        
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
