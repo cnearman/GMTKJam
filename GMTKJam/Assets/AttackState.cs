@@ -17,6 +17,7 @@ public class AttackState : BasePlayerState {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
         currentAV = (GameObject)Instantiate(attackVolume, animator.gameObject.transform.position, Quaternion.identity, animator.gameObject.transform);
+        currentAV.GetComponent<AttackVolume>().currentTeam = animator.gameObject.GetComponent<LittleGuy>().CurrentTeam;
 
         if (localAnimator.GetBool("isFacingLeft"))
         {

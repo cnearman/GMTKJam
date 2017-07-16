@@ -8,6 +8,7 @@ public class AttackVolume : MonoBehaviour {
     public float stunTime;
     public Vector2 direction;
     public bool left;
+    public Teams currentTeam;
 
 
     //List<Collider2D> alreadyAttacked = new List<Collider2D>();
@@ -27,7 +28,7 @@ public class AttackVolume : MonoBehaviour {
         if(other.gameObject.GetComponent<LittleGuy>() != null)//!alreadyAttacked.Contains(other) && other.gameObject.GetComponent<LittleGuy>() != null)
         {
             //alreadyAttacked.Add(other);
-            if(other.gameObject.GetComponent<LittleGuy>().CurrentTeam != gameObject.GetComponentInParent<LittleGuy>().CurrentTeam)
+            if(other.gameObject.GetComponent<LittleGuy>().CurrentTeam != currentTeam)
             {
                 EventManager.TriggerEvent("Damage_" + other.gameObject.GetComponent<LittleGuy>().PlayerNumber, new DamageEB { damage = damage });
                 other.GetComponent<Animator>().SetTrigger("state_HitStun");

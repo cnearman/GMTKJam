@@ -13,8 +13,7 @@ public class InputManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //Axis Events
-        EventManager.TriggerEvent("Move_" + playerNumber, new AxisEB { value = Input.GetAxisRaw("L_XAxis_" + playerNumber) });
+        
 
         if (Input.GetButtonDown("Start_" + playerNumber))
         {
@@ -36,34 +35,34 @@ public class InputManager : MonoBehaviour {
         if (Input.GetButtonDown("B_" + playerNumber))
         {
             Debug.Log("B_" + playerNumber + "Pressed");
-            EventManager.TriggerEvent("Attack_" + playerNumber + "Pressed", null);
+            EventManager.TriggerEvent("Ability2_" + playerNumber + "Pressed", null);
         }
         if (Input.GetButtonUp("B_" + playerNumber))
         {
             Debug.Log("B_" + playerNumber + "Released");
-            EventManager.TriggerEvent("Attack_" + playerNumber + "Released", null);
+            EventManager.TriggerEvent("Ability2_" + playerNumber + "Released", null);
         }
 
         if (Input.GetButtonDown("X_" + playerNumber))
         {
             Debug.Log("X_" + playerNumber + "Pressed");
-            EventManager.TriggerEvent("X_" + playerNumber + "Pressed", null);
+            EventManager.TriggerEvent("Attack_" + playerNumber + "Pressed", null);
         }
         if (Input.GetButtonUp("X_" + playerNumber))
         {
             Debug.Log("X_" + playerNumber + "Released");
-            EventManager.TriggerEvent("X_" + playerNumber + "Released", null);
+            EventManager.TriggerEvent("Attack_" + playerNumber + "Released", null);
         }
 
         if (Input.GetButtonDown("Y_" + playerNumber))
         {
             Debug.Log("Y_" + playerNumber + "Pressed");
-            EventManager.TriggerEvent("Y_" + playerNumber + "Pressed", null);
+            EventManager.TriggerEvent("Ability1_" + playerNumber + "Pressed", null);
         }
         if (Input.GetButtonUp("Y_" + playerNumber))
         {
             Debug.Log("Y_" + playerNumber + "Released");
-            EventManager.TriggerEvent("Y_" + playerNumber + "Released", null);
+            EventManager.TriggerEvent("Ability1_" + playerNumber + "Released", null);
         }
 
         if (Input.GetButtonDown("RB_" + playerNumber))
@@ -152,10 +151,6 @@ public class InputManager : MonoBehaviour {
         EventManager.TriggerEvent("TriggersR_" + playerNumber, new AxisEB { value = rawTRAxis });
         EventManager.TriggerEvent("TriggersL_" + playerNumber, new AxisEB { value = rawTLAxis });
 
-    }
-
-    void FixedUpdate()
-    {
         //L stick
         float rawLXAxis = Input.GetAxisRaw("L_XAxis_" + playerNumber);
         float rawLYAxis = Input.GetAxisRaw("L_YAxis_" + playerNumber);
@@ -163,6 +158,13 @@ public class InputManager : MonoBehaviour {
         EventManager.TriggerEvent("L_XAxis_" + playerNumber, new AxisEB { value = rawLXAxis });
         EventManager.TriggerEvent("L_YAxis_" + playerNumber, new AxisEB { value = rawLYAxis });
 
+
+    }
+
+    void FixedUpdate()
+    {
+        //Axis Events
+        EventManager.TriggerEvent("Move_" + playerNumber, new AxisEB { value = Input.GetAxisRaw("L_XAxis_" + playerNumber) });
     }
 
     //L_XAxis_{playerNumber}
