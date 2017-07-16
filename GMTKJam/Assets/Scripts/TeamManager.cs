@@ -144,20 +144,28 @@ public class TeamManager : MonoBehaviour {
             Team1.Remove(deadGuy);
             Destroy(deadGuy);
             Team1Current = 0;
-            if (Team1[Team1Current])
+            if (Team1.Count > 0)
+            {
+                Team1.First<GameObject>().SetActive(true);
+            }
+            /*if (Team1[Team1Current])
             {
                 Team1[Team1Current].SetActive(true);
-            }
+            }*/
         }
         else if (littleDeadGuy.CurrentTeam == Teams.TeamTwo)
         {
             Team2.Remove(deadGuy);
             Destroy(deadGuy);
             Team2Current = 0;
-            if (Team2[Team2Current])
+            if (Team2.Count > 0)
+            {
+                Team2.First<GameObject>().SetActive(true);
+            }
+            /*if (Team2[Team2Current])
             {
                 Team2[Team2Current].SetActive(true);
-            }
+            }*/
         }
 
         EventManager.TriggerEvent("FaintLittleGuy", new TeamFaintEB { team = littleDeadGuy.CurrentTeam });
