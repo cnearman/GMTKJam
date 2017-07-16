@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4105738565635582}
   - component: {fileID: 212038197209280702}
   - component: {fileID: 61377535750340968}
+  - component: {fileID: 114879388517315170}
   m_Layer: 9
   m_Name: AttackVolume
   m_TagString: Untagged
@@ -66,6 +67,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &114879388517315170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1583384480705466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0b41016677bde49aa3752e38b7216c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  force: 300
+  stunTime: 3
+  direction: {x: 1, y: 1}
+  left: 0
 --- !u!212 &212038197209280702
 SpriteRenderer:
   m_ObjectHideFlags: 1
