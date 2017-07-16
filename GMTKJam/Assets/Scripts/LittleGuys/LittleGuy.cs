@@ -24,7 +24,6 @@ public class LittleGuy : MonoBehaviour {
         EventManager.StopListening("Damage_" + PlayerNumber, Damage);
         EventManager.StopListening("Ability1_" + PlayerNumber + "_Triggered", Ability1Activated);
         EventManager.StopListening("Ability2_" + PlayerNumber + "_Triggered", Ability2Activated);
-
     }
 
     void Damage(EventBody eb)

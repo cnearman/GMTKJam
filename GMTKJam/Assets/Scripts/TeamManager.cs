@@ -44,6 +44,12 @@ public class TeamManager : MonoBehaviour {
     public Image health2p2;
     public Image health3p2;
 
+    public Image ability1p1;
+    public Image ability2p1;
+
+    public Image ability1p2;
+    public Image ability2p2;
+
     public void OnEnable()
     {
         EventManager.StartListening("SwapLeft_1", SwapLeftTeam1);
@@ -83,7 +89,7 @@ public class TeamManager : MonoBehaviour {
         if (teamInfo == null)
         {
             teamInfo = Instantiate(teamInformation).GetComponent<TeamInformation>();
-            teamInfo.p1Selections = new List<int> { BLUB_GUY, HARVEY_BIRD_GUY, LIGHTING_LAMB_GUY, TREE_GUY};
+            teamInfo.p1Selections = new List<int> { LIGHTING_LAMB_GUY, HARVEY_BIRD_GUY, TREE_GUY};
             teamInfo.p2Selections = new List<int> { BELLSPROUT_GUY};
         }
         teamInfo.p1Selections.ForEach(x =>
@@ -205,6 +211,17 @@ public class TeamManager : MonoBehaviour {
             }
         }
 
+        if(Team1.Count > Team1Current)
+        {
+            ability1p1.fillAmount = Team1[Team1Current].GetComponent<LittleGuy>().ability1CooldownCurrent / Team1[Team1Current].GetComponent<LittleGuy>().Ability1CooldownMax;
+            ability2p1.fillAmount = Team1[Team1Current].GetComponent<LittleGuy>().ability2CooldownCurrent / Team1[Team1Current].GetComponent<LittleGuy>().Ability2CooldownMax;
+        }
+
+        if (Team2.Count > Team2Current)
+        {
+            ability1p2.fillAmount = Team2[Team2Current].GetComponent<LittleGuy>().ability1CooldownCurrent / Team2[Team2Current].GetComponent<LittleGuy>().Ability1CooldownMax;
+            ability2p2.fillAmount = Team2[Team2Current].GetComponent<LittleGuy>().ability2CooldownCurrent / Team2[Team2Current].GetComponent<LittleGuy>().Ability2CooldownMax;
+        }
 
     }
 

@@ -175,7 +175,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '''Y'''
+  m_Text: '''B'''
 --- !u!222 &29219312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -472,7 +472,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '''Y'''
+  m_Text: '''B'''
 --- !u!222 &147080166
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -534,13 +534,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: caaff3f0fc324fb4b95a3ec0bda3412c, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
 --- !u!222 &149101878
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -732,7 +732,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '''B'''
+  m_Text: '''Y'''
 --- !u!222 &180053653
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2841,13 +2841,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: caaff3f0fc324fb4b95a3ec0bda3412c, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
 --- !u!222 &975336071
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3299,13 +3299,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: caaff3f0fc324fb4b95a3ec0bda3412c, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
 --- !u!222 &1124203809
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8465,7 +8465,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '''B'''
+  m_Text: '''Y'''
 --- !u!222 &1676852928
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9280,6 +9280,26 @@ Prefab:
       propertyPath: health3p2
       value: 
       objectReference: {fileID: 2110958397}
+    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
+        type: 2}
+      propertyPath: ability1p1
+      value: 
+      objectReference: {fileID: 149101877}
+    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
+        type: 2}
+      propertyPath: ability2p1
+      value: 
+      objectReference: {fileID: 975336070}
+    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
+        type: 2}
+      propertyPath: ability1p2
+      value: 
+      objectReference: {fileID: 1124203808}
+    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
+        type: 2}
+      propertyPath: ability2p2
+      value: 
+      objectReference: {fileID: 2129813379}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 893c740c763bb3e45aaeb65f75f2380b, type: 2}
   m_IsPrefabParent: 0
@@ -10176,13 +10196,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: caaff3f0fc324fb4b95a3ec0bda3412c, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
 --- !u!222 &2129813380
 CanvasRenderer:
   m_ObjectHideFlags: 0
