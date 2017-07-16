@@ -9008,16 +9008,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1071923088}
     m_Modifications:
-    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
-        type: 2}
-      propertyPath: Team2.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
-        type: 2}
-      propertyPath: Team1.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4628936729044232, guid: 893c740c763bb3e45aaeb65f75f2380b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.7443674
@@ -9049,46 +9039,6 @@ Prefab:
     - target: {fileID: 4628936729044232, guid: 893c740c763bb3e45aaeb65f75f2380b, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
-        type: 2}
-      propertyPath: Team2.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
-        type: 2}
-      propertyPath: Team1.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
-        type: 2}
-      propertyPath: Team1.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
-        type: 2}
-      propertyPath: Team2.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
-        type: 2}
-      propertyPath: Team1.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
-        type: 2}
-      propertyPath: Team1.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
-        type: 2}
-      propertyPath: Team1.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
-        type: 2}
-      propertyPath: Team1.Array.data[5]
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114185471844348872, guid: 893c740c763bb3e45aaeb65f75f2380b,
         type: 2}

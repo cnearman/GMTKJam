@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 95904239500230088}
   - component: {fileID: 114740599840969192}
   - component: {fileID: 114139635350227708}
+  - component: {fileID: 114775413892723736}
   m_Layer: 0
   m_Name: BlubGuy
   m_TagString: Untagged
@@ -168,6 +169,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerNumber: 1
   CurrentTeam: 0
+  Ability1CooldownMax: 4
+  Ability2CooldownMax: 8
+  ability1CooldownCurrent: 0
+  ability2CooldownCurrent: 0
   Statistics:
     values:
     - name: Health
@@ -194,6 +199,20 @@ MonoBehaviour:
   groundPoints:
   - {fileID: 4583020707054800}
   - {fileID: 4368575348012922}
+--- !u!114 &114775413892723736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1862665043406324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2027cf1af5906c446a116986c0d6ba21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeployedCount: 0
+  DeployedMax: 3
+  Glowey: {fileID: 1548758222757424, guid: 51a7f224c28f80b4cada462cb848e0ea, type: 2}
 --- !u!212 &212541189243821434
 SpriteRenderer:
   m_ObjectHideFlags: 1
