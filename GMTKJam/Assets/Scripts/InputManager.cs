@@ -64,7 +64,8 @@ public class InputManager : MonoBehaviour {
         if (Input.GetButtonDown("RB_" + playerNumber))
         {
             Debug.Log("RB_" + playerNumber + "Pressed");
-            EventManager.TriggerEvent("RB_" + playerNumber + "Pressed", null);
+            //EventManager.TriggerEvent("RB_" + playerNumber + "Pressed", null);
+            EventManager.TriggerEvent("SwapLeft_" + playerNumber, null);
         }
         if (Input.GetButtonUp("RB_" + playerNumber))
         {
@@ -75,7 +76,8 @@ public class InputManager : MonoBehaviour {
         if (Input.GetButtonDown("LB_" + playerNumber))
         {
             Debug.Log("LB_" + playerNumber + "Pressed");
-            EventManager.TriggerEvent("LB_" + playerNumber + "Pressed", null);
+            //EventManager.TriggerEvent("LB_" + playerNumber + "Pressed", null);
+            EventManager.TriggerEvent("SwapRight_" + playerNumber, null);
         }
         if (Input.GetButtonUp("LB_" + playerNumber))
         {

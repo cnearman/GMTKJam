@@ -32,3 +32,8 @@ public class TeamFaintEB : EventBody
 {
     public int team;
 }
+
+public class SwapEB : EventBody
+{
+    public Teams team;
+}
