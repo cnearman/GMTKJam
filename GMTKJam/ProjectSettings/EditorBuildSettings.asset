@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CharacterSelect.unity
+    guid: 133a6a596e8cae34bae3fb61aa224748
+  - enabled: 1
+    path: Assets/Scenes/BackupLevelUI.unity
+    guid: 33671d708733dfa489e29425962044e9
