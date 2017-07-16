@@ -225,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerNumber: 0
   durration: 0.2
+  displayVolumeRenderer: 0
   attackVolume: {fileID: 1583384480705466, guid: 3ba17eb53a12e2f4aa8321a4b48760b2,
     type: 2}
   attackPosition: {x: 0.84, y: 0}
@@ -854,7 +855,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: bf02268357f8a1b478cf6508dfa408f2, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8d5df7f9048104547b267eeab8be3bf4, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -982,7 +983,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8d5df7f9048104547b267eeab8be3bf4, type: 2}
+  m_Motion: {fileID: 7400000, guid: bf02268357f8a1b478cf6508dfa408f2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
