@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TeamManager : MonoBehaviour {
@@ -12,6 +13,9 @@ public class TeamManager : MonoBehaviour {
     private const int ROTATE_LEFT = -1;
     private const int ROTATE_RIGHT = 1;
 
+    private const float RESERVE_HEAL_CYCLE_DURATION = 4;
+    private const float POINT_DECREMENT = 5;
+    private float currentCycleDuration;
     public void OnEnable()
     {
         EventManager.StartListening("SwapLeft_1", SwapLeftTeam1);
@@ -39,7 +43,38 @@ public class TeamManager : MonoBehaviour {
         {
             teamMember.GetComponent<LittleGuy>().CurrentTeam = Teams.TeamTwo;
         }
-    }    
+    }
+
+    public void Update()
+    {
+        if (currentCycleDuration < RESERVE_HEAL_CYCLE_DURATION)
+        {
+            currentCycleDuration += Time.deltaTime;
+        }
+        else
+        {
+            foreach (var teamMember in Team1.Union(Team2))
+            {
+                var currentLittleGuy = teamMember.GetComponent<LittleGuy>();
+                var gameManager = FindObjectOfType<GameManage>();
+                if (!teamMember.activeInHierarchy)
+                {
+                    var health = currentLittleGuy.Statistics.GetAttribute(AttributeTypes.Health);
+                    var points = currentLittleGuy.CurrentTeam == Teams.TeamOne ? gameManager.pointsT1 : gameManager.pointsT2;
+                    if (health.CurrentValue < health.maxValue && points > POINT_DECREMENT)
+                    {
+                        health.CurrentValue += 1;
+                        EventManager.TriggerEvent("IncrementPoints", new PointsEB
+                        {
+                            points = -POINT_DECREMENT,
+                            team = currentLittleGuy.CurrentTeam
+                        });
+                    }
+                }
+            }
+            currentCycleDuration = 0;
+        }
+    }
 
     public void SwapLeftTeam1(EventBody eb)
     {
