@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 0
-  Duration: 0.1
+  Duration: 0.5
   NextState: state_Attack
 --- !u!114 &114299674922619484
 MonoBehaviour:
