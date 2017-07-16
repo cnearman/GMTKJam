@@ -2,33 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkingState : MovementState {
+public class FallingState : MovementState {
     Rigidbody2D rigidbody;
 
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
         base.OnStateEnter(animator, stateInfo, layerIndex);
-        EventManager.StartListening("Jump_" + PlayerNumber + "Pressed", Jump);
-        EventManager.StartListening("Attack_" + PlayerNumber + "Pressed", Attack);
         rigidbody = animator.gameObject.GetComponent<Rigidbody2D>();
+        EventManager.StartListening("Attack_" + PlayerNumber + "Pressed", Attack);
     }
 
-	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        base.OnStateUpdate(animator, stateInfo, layerIndex);
-        if (rigidbody.velocity.y < 0f)
-        {
-            animator.SetTrigger("state_falling");
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+
+        if (rigidbody.velocity.y == 0 && animator.GetBool("isGrounded")) {
+            animator.SetTrigger("state_Landing");
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
         base.OnStateExit(animator, stateInfo, layerIndex);
-        EventManager.StopListening("Jump_" + PlayerNumber + "Pressed", Jump);
         EventManager.StopListening("Attack_" + PlayerNumber + "Pressed", Attack);
     }
-
 
     private void Attack(EventBody eb)
     {
@@ -44,10 +44,4 @@ public class WalkingState : MovementState {
     //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
     //
     //}
-
-    private void Jump(EventBody eb)
-    {
-        Debug.Log("Jump Event processed by WalkingState.");
-        localAnimator.SetTrigger("state_JumpWarmUp");
-    }
 }

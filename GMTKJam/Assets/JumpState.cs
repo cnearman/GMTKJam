@@ -19,6 +19,7 @@ public class JumpState : MovementState {
         currentChargeTime = 0;
         held = true;
         EventManager.StartListening("Jump_" + PlayerNumber + "Released", StopJump);
+        EventManager.StartListening("Attack_" + PlayerNumber + "Pressed", Attack);
     }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -36,7 +37,11 @@ public class JumpState : MovementState {
             animator.SetBool("hasJumped", true);
         }
 
-        if (rigidbody.velocity.y <= 0 && animator.GetBool("isGrounded") && animator.GetBool("hasJumped"))
+        if(rigidbody.velocity.y < 0)
+        {
+            animator.SetBool("hasJumped", false);
+            animator.SetTrigger("state_falling");
+        } else if (rigidbody.velocity.y == 0 && animator.GetBool("isGrounded") && animator.GetBool("hasJumped"))
         {
             animator.SetBool("hasJumped", false);
             animator.SetTrigger("state_Landing");
@@ -47,6 +52,7 @@ public class JumpState : MovementState {
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         base.OnStateExit(animator, stateInfo, layerIndex);
         EventManager.StopListening("Jump_" + PlayerNumber + "Released", StopJump);
+        EventManager.StopListening("Attack_" + PlayerNumber + "Pressed", Attack);
     }
 
     void StopJump(EventBody eb)
@@ -54,13 +60,18 @@ public class JumpState : MovementState {
         held = false;
     }
 
-	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
-	//override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	//
-	//}
+    private void Attack(EventBody eb)
+    {
+        localAnimator.SetTrigger("state_AttackWarmUp");
+    }
 
-	// OnStateIK is called right after Animator.OnAnimatorIK(). Code that sets up animation IK (inverse kinematics) should be implemented here.
-	//override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	//
-	//}
+    // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
+    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    //
+    //}
+
+    // OnStateIK is called right after Animator.OnAnimatorIK(). Code that sets up animation IK (inverse kinematics) should be implemented here.
+    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    //
+    //}
 }

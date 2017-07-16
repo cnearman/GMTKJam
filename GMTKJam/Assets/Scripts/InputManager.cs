@@ -31,12 +31,12 @@ public class InputManager : MonoBehaviour {
         if (Input.GetButtonDown("B_" + playerNumber))
         {
             Debug.Log("B_" + playerNumber + "Pressed");
-            EventManager.TriggerEvent("B_" + playerNumber + "Pressed", null);
+            EventManager.TriggerEvent("Attack_" + playerNumber + "Pressed", null);
         }
         if (Input.GetButtonUp("B_" + playerNumber))
         {
             Debug.Log("B_" + playerNumber + "Released");
-            EventManager.TriggerEvent("B_" + playerNumber + "Released", null);
+            EventManager.TriggerEvent("Attack_" + playerNumber + "Released", null);
         }
 
         if (Input.GetButtonDown("X_" + playerNumber))
