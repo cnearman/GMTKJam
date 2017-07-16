@@ -2824,7 +2824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea582146a1ddf3f4ba24cae58a07aa33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alertText: {fileID: 0}
+  alertText: {fileID: 668068003}
   playerOneChars:
   - {fileID: 262918236}
   - {fileID: 373586322}
@@ -2851,7 +2851,7 @@ MonoBehaviour:
   p2Selection3: {fileID: 1136202486}
   p1Selections: 
   p2Selections: 
-  teamInfo: {fileID: 0}
+  teamInfo: {fileID: 1026527605}
 --- !u!4 &1623949885
 Transform:
   m_ObjectHideFlags: 0

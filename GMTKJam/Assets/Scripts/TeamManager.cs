@@ -7,15 +7,30 @@ public class TeamManager : MonoBehaviour {
     public List<GameObject> Team1;
     public List<GameObject> Team2;
 
+    public GameObject[] littleGuys;
+
+    [SerializeField]
+    private Transform Team1Spawn;
+
+    [SerializeField]
+    private Transform Team2Spawn;
+
     private int Team1Current;
     private int Team2Current;
 
     private const int ROTATE_LEFT = -1;
     private const int ROTATE_RIGHT = 1;
 
+    private const int BELLSPROUT_GUY = 0;
+    private const int BLUB_GUY = 1;
+    private const int HARVEY_BIRD_GUY = 2;
+    private const int LIGHTING_LAMB_GUY = 3;
+    private const int TURTLE_GUY = 4;
+
     private const float RESERVE_HEAL_CYCLE_DURATION = 4;
     private const float POINT_DECREMENT = 5;
     private float currentCycleDuration;
+
     public void OnEnable()
     {
         EventManager.StartListening("SwapLeft_1", SwapLeftTeam1);
@@ -23,6 +38,7 @@ public class TeamManager : MonoBehaviour {
         EventManager.StartListening("SwapLeft_2", SwapLeftTeam2);
         EventManager.StartListening("SwapRight_2", SwapRightTeam2);
         EventManager.StartListening("Death", HandleDeath);
+        EventManager.StartListening("GameStart", GameStart);
     }
 
     public void OnDisable()
@@ -32,11 +48,12 @@ public class TeamManager : MonoBehaviour {
         EventManager.StopListening("SwapLeft_2", SwapLeftTeam2);
         EventManager.StopListening("SwapRight_2", SwapRightTeam2);
         EventManager.StopListening("Death", HandleDeath);
+        EventManager.StopListening("GameStart", GameStart);
     }
 
     public void Awake()
     {
-        foreach(var teamMember in Team1)
+        foreach (var teamMember in Team1)
         {
             teamMember.GetComponent<LittleGuy>().CurrentTeam = Teams.TeamOne;
         }
@@ -45,6 +62,20 @@ public class TeamManager : MonoBehaviour {
         {
             teamMember.GetComponent<LittleGuy>().CurrentTeam = Teams.TeamTwo;
         }
+    }
+
+    public void Start()
+    {
+        var teamInfo = FindObjectOfType<TeamInformation>();
+        teamInfo.p1Selections.ForEach(x =>
+        {
+            Team1.Add(CreateCharacter(x, Teams.TeamOne));
+        });
+        teamInfo.p2Selections.ForEach(x =>
+        {
+            Team2.Add(CreateCharacter(x, Teams.TeamTwo));
+        });
+        EventManager.TriggerEvent("GameStart", null);
     }
 
     public void Update()
@@ -76,6 +107,18 @@ public class TeamManager : MonoBehaviour {
             }
             currentCycleDuration = 0;
         }
+    }
+
+    private GameObject CreateCharacter(int characterNumber, Teams team)
+    {
+        var position = team == Teams.TeamOne ? Team1Spawn.position : Team2Spawn.position;
+        var pNumber = team == Teams.TeamOne ? 1 : 2;
+        GameObject newGuy = Instantiate(littleGuys[characterNumber], position, Quaternion.identity);
+        newGuy.SetActive(false);
+        var newLittleGuy = newGuy.GetComponent<LittleGuy>();
+        newLittleGuy.CurrentTeam = team;
+        newLittleGuy.PlayerNumber = pNumber;
+        return newGuy;
     }
 
     public void SwapLeftTeam1(EventBody eb)
@@ -169,6 +212,12 @@ public class TeamManager : MonoBehaviour {
         }
 
         EventManager.TriggerEvent("FaintLittleGuy", new TeamFaintEB { team = littleDeadGuy.CurrentTeam });
+    }
+
+    private void GameStart(EventBody eb)
+    {
+        Team1[0].SetActive(true);
+        Team2[0].SetActive(true);
     }
 
     private void StartSwapIn(EventBody eb)
