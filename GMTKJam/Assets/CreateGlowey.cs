@@ -6,24 +6,45 @@ public class CreateGlowey : MonoBehaviour {
     public int DeployedCount;
     public int DeployedMax;
 
+    public LittleGuy parent;
+
     public GameObject Glowey;
+
+    private int PlayerNumber;
 
     public void OnEnable()
     {
-        EventManager.StartListening("Ability1_1_Pressed", Activate);
+        parent = GetComponent<LittleGuy>();
+        PlayerNumber = parent.PlayerNumber;
+        EventManager.StartListening("Ability1_" + PlayerNumber + "Pressed", Activate);
+        EventManager.StartListening("Ability2_" + PlayerNumber + "Pressed", Reset);
     }
 
     public void OnDisable()
     {
-        EventManager.StopListening("Ability1_1_Pressed", Activate);
+        EventManager.StopListening("Ability1_" + PlayerNumber + "Pressed", Activate);
+        EventManager.StopListening("Ability2_" + PlayerNumber + "Pressed", Reset);
     }
 
     public void Activate(EventBody Eb)
     {
-        if ( DeployedCount < DeployedMax)
+        if (parent.ability1CooldownCurrent == 0)
         {
-            Instantiate(Glowey, gameObject.transform.position, Quaternion.identity);
-            DeployedCount = DeployedCount + 1;
+            if (DeployedCount < DeployedMax)
+            {
+                var glowey = Instantiate(Glowey, gameObject.transform.position, Quaternion.identity);
+                glowey.GetComponent<GloweyExplode>().team = GetComponent<LittleGuy>().CurrentTeam;
+                DeployedCount = DeployedCount + 1;
+            }
+        }
+    }
+
+    public void Reset(EventBody eb)
+    {
+        if(parent.ability2CooldownCurrent == 0)
+        {
+            EventManager.TriggerEvent("GloweyExplode", null);
+            DeployedCount = 0;
         }
     }
 }
