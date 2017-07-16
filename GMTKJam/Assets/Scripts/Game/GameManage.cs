@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class GameManage : MonoBehaviour {
     public float captureVictory;
-    float pointsT1;
-    float pointsT2;
+    public float pointsT1;
+    public float pointsT2;
     bool gameOver;
 
     //Dictionary<string, bool> rosterT1;
