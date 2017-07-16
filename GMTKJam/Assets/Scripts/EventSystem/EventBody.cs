@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class EventBody {
 
@@ -30,7 +31,7 @@ public class LittleNameEB : EventBody
 
 public class TeamFaintEB : EventBody
 {
-    public int team;
+    public Teams team;
 }
 
 public class SwapEB : EventBody
@@ -41,4 +42,9 @@ public class SwapEB : EventBody
 public class DamageEB : EventBody
 {
     public float damage;
+}
+
+public class DeathEB : EventBody
+{
+    public GameObject entity;
 }

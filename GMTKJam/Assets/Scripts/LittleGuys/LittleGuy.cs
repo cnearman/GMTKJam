@@ -24,7 +24,8 @@ public class LittleGuy : MonoBehaviour {
 
         if(Statistics.GetAttribute(AttributeTypes.Health).currentValue <= 0f)
         {
-            Destroy(gameObject);
+            EventManager.TriggerEvent("Death", new DeathEB { entity = gameObject });
+            GetComponent<Animator>().SetTrigger("Death");
         }
     }
 

@@ -113,11 +113,11 @@ public class GameManage : MonoBehaviour {
 
     void FaintLittleGuy(EventBody eb)
     {
-        int team = ((TeamFaintEB)eb).team;
-        if(team == 1)
+        Teams team = ((TeamFaintEB)eb).team;
+        if(team == Teams.TeamOne)
         {
             team1Alive -= 1;
-        } else if(team == 2)
+        } else if(team == Teams.TeamTwo)
         {
             team2Alive -= 1;
         }

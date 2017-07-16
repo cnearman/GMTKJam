@@ -22,6 +22,7 @@ public class TeamManager : MonoBehaviour {
         EventManager.StartListening("SwapRight_1", SwapRightTeam1);
         EventManager.StartListening("SwapLeft_2", SwapLeftTeam2);
         EventManager.StartListening("SwapRight_2", SwapRightTeam2);
+        EventManager.StartListening("Death", HandleDeath);
     }
 
     public void OnDisable()
@@ -30,6 +31,7 @@ public class TeamManager : MonoBehaviour {
         EventManager.StopListening("SwapRight_1", SwapRightTeam1);
         EventManager.StopListening("SwapLeft_2", SwapLeftTeam2);
         EventManager.StopListening("SwapRight_2", SwapRightTeam2);
+        EventManager.StopListening("Death", HandleDeath);
     }
 
     public void Awake()
@@ -131,6 +133,34 @@ public class TeamManager : MonoBehaviour {
                 //EventManager.StartListening("CompleteSwapOut", StartSwapIn);
             }
         }
+    }
+
+    private void HandleDeath(EventBody eb)
+    {
+        var deadGuy = ((DeathEB)eb).entity;
+        var littleDeadGuy = deadGuy.GetComponent<LittleGuy>();
+        if (littleDeadGuy.CurrentTeam == Teams.TeamOne)
+        {
+            Team1.Remove(deadGuy);
+            Destroy(deadGuy);
+            Team1Current = 0;
+            if (Team1[Team1Current])
+            {
+                Team1[Team1Current].SetActive(true);
+            }
+        }
+        else if (littleDeadGuy.CurrentTeam == Teams.TeamTwo)
+        {
+            Team2.Remove(deadGuy);
+            Destroy(deadGuy);
+            Team2Current = 0;
+            if (Team2[Team2Current])
+            {
+                Team2[Team2Current].SetActive(true);
+            }
+        }
+
+        EventManager.TriggerEvent("FaintLittleGuy", new TeamFaintEB { team = littleDeadGuy.CurrentTeam });
     }
 
     private void StartSwapIn(EventBody eb)
