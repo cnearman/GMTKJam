@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,4 +22,9 @@ public class TeamInformation : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public static explicit operator TeamInformation(GameObject v)
+    {
+        throw new NotImplementedException();
+    }
 }

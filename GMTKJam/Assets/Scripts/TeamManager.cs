@@ -27,6 +27,7 @@ public class TeamManager : MonoBehaviour {
     private const int HARVEY_BIRD_GUY = 2;
     private const int LIGHTING_LAMB_GUY = 3;
     private const int TURTLE_GUY = 4;
+    private const int TREE_GUY = 5;
 
     private const float RESERVE_HEAL_CYCLE_DURATION = 4;
     private const float POINT_DECREMENT = 5;
@@ -82,7 +83,7 @@ public class TeamManager : MonoBehaviour {
         if (teamInfo == null)
         {
             teamInfo = Instantiate(teamInformation).GetComponent<TeamInformation>();
-            teamInfo.p1Selections = new List<int> { BLUB_GUY, HARVEY_BIRD_GUY, LIGHTING_LAMB_GUY};
+            teamInfo.p1Selections = new List<int> { BLUB_GUY, HARVEY_BIRD_GUY, LIGHTING_LAMB_GUY, TREE_GUY};
             teamInfo.p2Selections = new List<int> { BELLSPROUT_GUY};
         }
         teamInfo.p1Selections.ForEach(x =>
