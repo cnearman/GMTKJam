@@ -118,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1253116400520142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.125, y: -0.45, z: 0}
+  m_LocalPosition: {x: 0.1756, y: -0.4903, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4154143014641204}
@@ -130,8 +130,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536300973650736}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2669168, y: -1.6311316, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.78, y: -5.0698214, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4893695622049156}
@@ -161,7 +161,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1870530444116672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.23, y: -0.45, z: 0}
+  m_LocalPosition: {x: 0.0321, y: -0.4927, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4154143014641204}
@@ -199,8 +199,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: 0.1, y: 0}
+  m_Size: {x: 0.8, y: 1}
   m_Direction: 0
 --- !u!95 &95937430234955532
 Animator:
@@ -211,7 +211,7 @@ Animator:
   m_GameObject: {fileID: 1536300973650736}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 873cc39042439bb46baa95efab67b080, type: 2}
+  m_Controller: {fileID: 9100000, guid: a7a4065ac3a7b03499167490e26a31d8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -230,8 +230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3eb7842edc05ba49994c9ed6ffd81b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerNumber: 0
-  av: {fileID: 1829085062875678, guid: ff0d3747a2134a34f84f04222128e2e0, type: 2}
+  PlayerNumber: 1
+  av: {fileID: 1829085062875678, guid: dc023248de9564a4eb874d9f42381437, type: 2}
   ps: {fileID: 198438605142412626}
   durration: 0.3
   force: 1000
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00764d61738e9414cac8e1e7643d5357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerNumber: 0
+  PlayerNumber: 1
   av: {fileID: 1097574956000478, guid: f1740099930151145bec272d531c6771, type: 2}
   ps: {fileID: 198949173059808908}
   durration: 0.3
