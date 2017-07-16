@@ -9,13 +9,16 @@ public class AttackVolume : MonoBehaviour {
     public Vector2 direction;
     public bool left;
     public Teams currentTeam;
-
+    public bool DisplayHitbox = true;
 
     //List<Collider2D> alreadyAttacked = new List<Collider2D>();
 
 	// Use this for initialization
 	void Start () {
-		
+        if (!DisplayHitbox)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
 	}
 	
 	// Update is called once per frame

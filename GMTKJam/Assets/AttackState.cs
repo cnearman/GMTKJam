@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackState : BasePlayerState {
     public float durration;
     float currentDurration;
+    public bool displayVolumeRenderer = true;
 
     public GameObject attackVolume;
     GameObject currentAV;
@@ -18,7 +19,10 @@ public class AttackState : BasePlayerState {
 
         currentAV = (GameObject)Instantiate(attackVolume, animator.gameObject.transform.position, Quaternion.identity, animator.gameObject.transform);
         currentAV.GetComponent<AttackVolume>().currentTeam = animator.gameObject.GetComponent<LittleGuy>().CurrentTeam;
-
+        if (!displayVolumeRenderer)
+        {
+            currentAV.GetComponent<SpriteRenderer>().enabled = false;
+        }
         if (localAnimator.GetBool("isFacingLeft"))
         {
             currentAV.transform.localPosition = attackPositionLeft;
