@@ -6,7 +6,7 @@ public class MovementState : BasePlayerState {
     Rigidbody2D rb;
     float accelerationX = 50;
     float maxSpeedX = 5;
-
+    SpriteRenderer rend;
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -14,7 +14,8 @@ public class MovementState : BasePlayerState {
         rb = animator.gameObject.GetComponent<Rigidbody2D>();
         maxSpeedX = animator.gameObject.GetComponent<LittleGuy>().Statistics.GetAttribute(AttributeTypes.Speed).CurrentValue;
         EventManager.StartListening("Move_" + PlayerNumber, Move);
-	}
+        rend = animator.gameObject.GetComponent<SpriteRenderer>();
+    }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -57,6 +58,7 @@ public class MovementState : BasePlayerState {
             }
 
             localAnimator.SetBool("isFacingLeft", true);
+            rend.flipX = true;
             //rb.AddForce(Vector2.left * 6);
         }
         else if (xInput > 0)
@@ -68,6 +70,7 @@ public class MovementState : BasePlayerState {
             }
 
             localAnimator.SetBool("isFacingLeft", false);
+            rend.flipX = false;
             //rb.AddForce(Vector2.right * 6);
         } // If 0 Then face same direction
 
