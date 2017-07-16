@@ -37,3 +37,8 @@ public class SwapEB : EventBody
 {
     public Teams team;
 }
+
+public class DamageEB : EventBody
+{
+    public float damage;
+}
