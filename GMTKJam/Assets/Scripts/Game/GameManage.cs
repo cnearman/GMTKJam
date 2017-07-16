@@ -70,7 +70,7 @@ public class GameManage : MonoBehaviour {
         {
             pointsUIT1.fillAmount = (pointsT1 / captureVictory);
             pointsUIT2.fillAmount = (pointsT2 / captureVictory);
-
+            GetComponent<EndGameHandler>().enabled = true;
             if (pointsT1 >= captureVictory)
             {
                 gameOver = true;

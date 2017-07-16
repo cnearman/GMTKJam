@@ -59,3 +59,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  littleGuys:
+  - {fileID: 1553794579680652, guid: 9b4c35e336eefe54fbf667143a05c4f5, type: 2}
+  - {fileID: 1862665043406324, guid: 08dc8dffbf43bd144877d01f425cd01b, type: 2}
+  - {fileID: 1536300973650736, guid: 7c0639935198da14f8db090337582b1d, type: 2}
+  - {fileID: 1268553412700196, guid: 894afd090790bc644b80b4afb9b1a66a, type: 2}
+  - {fileID: 1409112915777982, guid: d8da6636bc30da54586a6b9d56003151, type: 2}
+  Team1Spawn: {fileID: 0}
+  Team2Spawn: {fileID: 0}
