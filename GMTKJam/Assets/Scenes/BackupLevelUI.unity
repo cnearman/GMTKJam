@@ -3448,7 +3448,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -987674395
+  randomSeed: -849267275
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6662,8 +6662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0031be0e8af012342b56c99d87776871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PointsPerCycle: 5
-  PointCycleDuration: 2
+  PointsPerCycle: 0.5
+  PointCycleDuration: 0.1
 --- !u!61 &1623793063
 BoxCollider2D:
   m_ObjectHideFlags: 0

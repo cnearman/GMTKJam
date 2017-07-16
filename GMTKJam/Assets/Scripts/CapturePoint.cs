@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CapturePoint : MonoBehaviour {
 
-    public int PointsPerCycle;
+    public float PointsPerCycle;
     public float PointCycleDuration;
     private bool startCapturing;
     private float capturedDuration;
