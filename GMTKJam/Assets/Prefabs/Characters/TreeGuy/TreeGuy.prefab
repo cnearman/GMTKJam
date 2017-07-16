@@ -55,6 +55,8 @@ GameObject:
   - component: {fileID: 95517866676936752}
   - component: {fileID: 114140256931418998}
   - component: {fileID: 114161196077460864}
+  - component: {fileID: 114852217340109510}
+  - component: {fileID: 114658614510139364}
   m_Layer: 0
   m_Name: TreeGuy
   m_TagString: Untagged
@@ -121,7 +123,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &70276607241035892
 CapsuleCollider2D:
@@ -182,8 +184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerNumber: 1
   CurrentTeam: 0
-  Ability1CooldownMax: 0
-  Ability2CooldownMax: 0
+  Ability1CooldownMax: 1
+  Ability2CooldownMax: 1
   ability1CooldownCurrent: 0
   ability2CooldownCurrent: 0
   Statistics:
@@ -198,6 +200,35 @@ MonoBehaviour:
       maxValue: 6
       initialValue: 6
       currentValue: 6
+--- !u!114 &114658614510139364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265632078734150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c013cf51e92e1dc4f979df4d1ffa7a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerNumber: 0
+  seed: {fileID: 1349442508031636, guid: 976bedda9fe6c8049b96e948ecffcf3c, type: 2}
+  durration: 10
+  triggerTime: 3
+--- !u!114 &114852217340109510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265632078734150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa6c7aef9f60af4d88e876ff6f89c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerNumber: 0
+  seed: {fileID: 1520990318660654, guid: 8172b61b6e3c2bc42acc355a444e4fed, type: 2}
+  durration: 20
 --- !u!212 &212197290870868436
 SpriteRenderer:
   m_ObjectHideFlags: 1

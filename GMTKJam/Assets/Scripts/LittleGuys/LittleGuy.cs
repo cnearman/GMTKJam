@@ -31,6 +31,11 @@ public class LittleGuy : MonoBehaviour {
         float damage = ((DamageEB)eb).damage;
         Statistics.GetAttribute(AttributeTypes.Health).currentValue -= damage;
 
+        if(Statistics.GetAttribute(AttributeTypes.Health).currentValue > Statistics.GetAttribute(AttributeTypes.Health).maxValue)
+        {
+            Statistics.GetAttribute(AttributeTypes.Health).currentValue = Statistics.GetAttribute(AttributeTypes.Health).maxValue;
+        }
+
         if(Statistics.GetAttribute(AttributeTypes.Health).currentValue <= 0f)
         {
             GetComponent<Animator>().SetTrigger("Death");
