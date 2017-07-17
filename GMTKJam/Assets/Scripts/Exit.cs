@@ -13,14 +13,14 @@ public class Exit : MonoBehaviour {
 
     private void OnEnable()
     {
-        EventManager.StartListening("Start_Pressed", BeginCount);
-        EventManager.StartListening("Start_Released", EndCount);
+        EventManager.StartListening("Back_Pressed", BeginCount);
+        EventManager.StartListening("Back_Released", EndCount);
     }
 
     private void OnDisable()
     {
-        EventManager.StopListening("Start_Pressed", BeginCount);
-        EventManager.StopListening("Start_Released", EndCount);
+        EventManager.StopListening("Back_Pressed", BeginCount);
+        EventManager.StopListening("Back_Released", EndCount);
     }
 
     // Use this for initialization

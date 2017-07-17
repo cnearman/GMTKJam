@@ -89,7 +89,7 @@ public class TeamManager : MonoBehaviour {
         if (teamInfo == null)
         {
             teamInfo = Instantiate(teamInformation).GetComponent<TeamInformation>();
-            teamInfo.p1Selections = new List<int> { BLUB_GUY, HARVEY_BIRD_GUY, BELLSPROUT_GUY };
+            teamInfo.p1Selections = new List<int> { BLUB_GUY, LIGHTING_LAMB_GUY, HARVEY_BIRD_GUY, BELLSPROUT_GUY };
             teamInfo.p2Selections = new List<int> { BELLSPROUT_GUY};
         }
         teamInfo.p1Selections.ForEach(x =>
