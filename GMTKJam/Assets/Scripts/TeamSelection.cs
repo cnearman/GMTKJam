@@ -8,8 +8,8 @@ public class TeamSelection : MonoBehaviour {
 
     public Text alertText;
 
-    public Image[] playerOneChars = new Image[6];
-    public Image[] playerTwoChars = new Image[6];
+    public Image[] playerOneChars = new Image[5];
+    public Image[] playerTwoChars = new Image[5];
 
     public int p1CurrentSelection;
     public int p2CurrentSelection;

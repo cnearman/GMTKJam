@@ -2830,14 +2830,12 @@ MonoBehaviour:
   - {fileID: 373586322}
   - {fileID: 1833325616}
   - {fileID: 1276577926}
-  - {fileID: 676349433}
   - {fileID: 1399629721}
   playerTwoChars:
   - {fileID: 293202325}
   - {fileID: 1784172889}
   - {fileID: 633646740}
   - {fileID: 1820834398}
-  - {fileID: 1948381027}
   - {fileID: 1666547914}
   p1CurrentSelection: 0
   p2CurrentSelection: 0
