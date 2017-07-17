@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 95135562585154606}
   - component: {fileID: 114343125093177178}
   - component: {fileID: 114410009931102976}
+  - component: {fileID: 114112853179629322}
   m_Layer: 0
   m_Name: BellsproutGuy 1
   m_TagString: Untagged
@@ -155,6 +156,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114112853179629322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1553794579680652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c399bdbee997174ebe825d58088529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerNumber: 0
+  aim: {x: 0, y: 0}
+  force: 1000
+  range: 0.3
+  petal: {fileID: 1058099312802632, guid: 429a6078877966547899bd3af03125dd, type: 2}
 --- !u!114 &114343125093177178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,8 +199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerNumber: 1
   CurrentTeam: 0
-  Ability1CooldownMax: 0
-  Ability2CooldownMax: 0
+  Ability1CooldownMax: 1
+  Ability2CooldownMax: 1
   ability1CooldownCurrent: 0
   ability2CooldownCurrent: 0
   Statistics:
