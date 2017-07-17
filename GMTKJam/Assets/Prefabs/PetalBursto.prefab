@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   force: 500
-  stunTime: 2
+  stunTime: 1.5
   direction: {x: 0, y: 1}
   left: 0
   currentTeam: 0

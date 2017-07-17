@@ -80,9 +80,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   force: 300
-  stunTime: 3
+  stunTime: 0.5
   direction: {x: 1, y: 1}
   left: 0
+  currentTeam: 0
+  DisplayHitbox: 1
 --- !u!212 &212038197209280702
 SpriteRenderer:
   m_ObjectHideFlags: 1
