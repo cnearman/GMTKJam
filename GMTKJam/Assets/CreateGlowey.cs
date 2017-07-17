@@ -35,6 +35,7 @@ public class CreateGlowey : MonoBehaviour {
                 var glowey = Instantiate(Glowey, gameObject.transform.position, Quaternion.identity);
                 glowey.GetComponent<GloweyExplode>().team = GetComponent<LittleGuy>().CurrentTeam;
                 DeployedCount = DeployedCount + 1;
+                EventManager.TriggerEvent("Ability1_" + PlayerNumber + "_Triggered", null);
             }
         }
     }
@@ -45,6 +46,7 @@ public class CreateGlowey : MonoBehaviour {
         {
             EventManager.TriggerEvent("GloweyExplode", null);
             DeployedCount = 0;
+            EventManager.TriggerEvent("Ability2_" + PlayerNumber + "_Triggered", null);
         }
     }
 }
