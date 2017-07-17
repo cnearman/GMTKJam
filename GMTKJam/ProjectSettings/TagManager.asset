@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - LittleGuy
+  - LG
   layers:
   - Default
   - TransparentFX

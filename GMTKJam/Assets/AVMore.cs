@@ -8,6 +8,7 @@ public class AVMore : MonoBehaviour {
     public float force;
     public float stunTime;
     public float speed;
+    public float range;
     public Vector2 direction;
     public bool left;
     public Teams currentTeam;
@@ -19,18 +20,25 @@ public class AVMore : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        Destroy(gameObject, range);
         if (!DisplayHitbox)
         {
             GetComponent<SpriteRenderer>().enabled = false;
         }
-        transform.parent = null;
+        //transform.parent = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.parent = null;
-        transform.Translate(new Vector3(speed * Time.deltaTime, 0f, 0f));
+        //transform.parent = null;
+        if (!left)
+        {
+            transform.Translate(new Vector3(speed * Time.deltaTime, 0f, 0f));
+        } else
+        {
+            transform.Translate(new Vector3(-speed * Time.deltaTime, 0f, 0f));
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

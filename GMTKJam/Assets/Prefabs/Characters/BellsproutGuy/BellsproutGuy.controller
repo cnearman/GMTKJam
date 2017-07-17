@@ -230,10 +230,11 @@ MonoBehaviour:
   PlayerNumber: 0
   durration: 0.2
   displayVolumeRenderer: 1
-  attackVolume: {fileID: 1583384480705466, guid: 3ba17eb53a12e2f4aa8321a4b48760b2,
+  attackVolume: {fileID: 1953765199352410, guid: 67b2f5d57fa29ef43a9d4bb7f6435a8e,
     type: 2}
-  attackPosition: {x: 0.84, y: 0}
-  attackPositionLeft: {x: -0.84, y: 0}
+  attackPosition: {x: 0, y: 0}
+  attackPositionLeft: {x: 0, y: 0}
+  isProjectile: 1
 --- !u!114 &114714031881950856
 MonoBehaviour:
   m_ObjectHideFlags: 1

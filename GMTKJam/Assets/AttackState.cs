@@ -12,26 +12,61 @@ public class AttackState : BasePlayerState {
     public Vector2 attackPosition;
     public Vector2 attackPositionLeft;
 
+    public bool isProjectile = false;
+
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        currentAV = (GameObject)Instantiate(attackVolume, animator.gameObject.transform.position, Quaternion.identity, animator.gameObject.transform);
-        currentAV.GetComponent<AttackVolume>().currentTeam = animator.gameObject.GetComponent<LittleGuy>().CurrentTeam;
+        if (isProjectile)
+        {
+            currentAV = (GameObject)Instantiate(attackVolume, animator.gameObject.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            currentAV = (GameObject)Instantiate(attackVolume, animator.gameObject.transform.position, Quaternion.identity, animator.gameObject.transform);
+        }
+        if(isProjectile)
+        {
+            currentAV.GetComponent<AVMore>().currentTeam = animator.gameObject.GetComponent<LittleGuy>().CurrentTeam;
+        } else
+        {
+            currentAV.GetComponent<AttackVolume>().currentTeam = animator.gameObject.GetComponent<LittleGuy>().CurrentTeam;
+        }
+        
         if (!displayVolumeRenderer)
         {
             currentAV.GetComponent<SpriteRenderer>().enabled = false;
         }
         if (localAnimator.GetBool("isFacingLeft"))
         {
-            currentAV.transform.localPosition = attackPositionLeft;
-            currentAV.GetComponent<AttackVolume>().left = true;
+            
+
+            if(isProjectile)
+            {
+                currentAV.GetComponent<AVMore>().left = true;
+            } else
+            {
+                currentAV.transform.localPosition = attackPositionLeft;
+                currentAV.GetComponent<AttackVolume>().left = true;
+            }
+            
             currentAV.SetActive(true);
         } else
         {
-            currentAV.transform.localPosition = attackPosition;
-            currentAV.GetComponent<AttackVolume>().left = false;
+            
+
+            if(isProjectile)
+            {
+                currentAV.GetComponent<AVMore>().left = false;
+            } else
+            {
+                currentAV.transform.localPosition = attackPosition;
+                currentAV.GetComponent<AttackVolume>().left = false;
+            }
+            
             currentAV.SetActive(true);
         }
         currentDurration = 0f;
@@ -51,7 +86,10 @@ public class AttackState : BasePlayerState {
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
-        Destroy(currentAV);
+        if (!isProjectile)
+        {
+            Destroy(currentAV);
+        }
     }
 
     private void OnDisable()

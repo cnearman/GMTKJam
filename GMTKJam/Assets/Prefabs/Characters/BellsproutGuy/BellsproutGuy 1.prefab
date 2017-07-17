@@ -57,9 +57,10 @@ GameObject:
   - component: {fileID: 114410009931102976}
   - component: {fileID: 82431889221120382}
   - component: {fileID: 114635171746668928}
+  - component: {fileID: 114330988161699282}
   m_Layer: 0
   m_Name: BellsproutGuy 1
-  m_TagString: Untagged
+  m_TagString: LG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,7 +230,7 @@ Animator:
   m_GameObject: {fileID: 1553794579680652}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 873cc39042439bb46baa95efab67b080, type: 2}
+  m_Controller: {fileID: 9100000, guid: a61e14f0373f42e4aaf168c582c90a9e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -237,6 +238,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114330988161699282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1553794579680652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba1c3cc081e1b64a9c820a0c1832bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerNumber: 0
+  range: 5
+  petal: {fileID: 1000047815542642, guid: 6e6e3b42a34a3a84b9f33477076a9fd7, type: 2}
 --- !u!114 &114343125093177178
 MonoBehaviour:
   m_ObjectHideFlags: 1
