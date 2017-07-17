@@ -20,6 +20,11 @@ public class InputManager : MonoBehaviour {
             EventManager.TriggerEvent("Start_" + "Pressed", null);
         }
 
+        if (Input.GetButtonUp("Start_" + playerNumber))
+        {
+            EventManager.TriggerEvent("Start_" + "Released", null);
+        }
+
         //Button Events
         if (Input.GetButtonDown("A_" + playerNumber))
         {
