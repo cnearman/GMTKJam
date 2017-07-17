@@ -345,8 +345,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerNumber: 1
   CurrentTeam: 0
-  Ability1CooldownMax: 1
-  Ability2CooldownMax: 1
+  Ability1CooldownMax: 2.5
+  Ability2CooldownMax: 4
   ability1CooldownCurrent: 0
   ability2CooldownCurrent: 0
   Statistics:

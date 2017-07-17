@@ -147,7 +147,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1553794579680652}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -279,8 +279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerNumber: 1
   CurrentTeam: 0
-  Ability1CooldownMax: 1
-  Ability2CooldownMax: 1
+  Ability1CooldownMax: 2
+  Ability2CooldownMax: 2
   ability1CooldownCurrent: 0
   ability2CooldownCurrent: 0
   Statistics:
