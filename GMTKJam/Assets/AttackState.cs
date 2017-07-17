@@ -54,6 +54,14 @@ public class AttackState : BasePlayerState {
         Destroy(currentAV);
     }
 
+    private void OnDisable()
+    {
+        if (Application.isPlaying)
+        {
+            Destroy(currentAV);
+        }
+    }
+
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
     //

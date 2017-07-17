@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class HitStunState : BasePlayerState
 {
+    public AudioClip[] hits;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
+        var asrc = animator.gameObject.GetComponent<AudioSource>();
+        asrc.clip = hits[Random.Range(0, hits.Length - 1)];
+        asrc.Play();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

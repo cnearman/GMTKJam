@@ -129,6 +129,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 0
+  hits:
+  - {fileID: 8300000, guid: 2f6a162ed68afa540af67c056c1129bf, type: 3}
+  - {fileID: 8300000, guid: 17bfd515c5963b644a4328b9c2addf40, type: 3}
+  - {fileID: 8300000, guid: e5ee3056b1cec6c429b0aadcdaf8858f, type: 3}
 --- !u!114 &114155896268457240
 MonoBehaviour:
   m_ObjectHideFlags: 1
