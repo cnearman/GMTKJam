@@ -25,7 +25,6 @@ public class GameManage : MonoBehaviour {
     public Image[] team1Guys = new Image[3];
     public Image[] team2Guys = new Image[3];
 
-
     void OnEnable()
     {
         EventManager.StartListening("IncrementPoints", IncrementPoints);
