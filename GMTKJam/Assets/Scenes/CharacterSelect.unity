@@ -219,6 +219,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d96da8fb17aede44bb7cac0677836dfa, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &45373708 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1561546874750740, guid: d96da8fb17aede44bb7cac0677836dfa,
+    type: 2}
+  m_PrefabInternal: {fileID: 45373707}
 --- !u!1 &152085439
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,7 +2854,7 @@ MonoBehaviour:
   p2Selection3: {fileID: 1136202486}
   p1Selections: 
   p2Selections: 
-  teamInfo: {fileID: 0}
+  teamInfo: {fileID: 45373708}
 --- !u!4 &1623949885
 Transform:
   m_ObjectHideFlags: 0

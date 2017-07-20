@@ -822,7 +822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   force: 500
-  stunTime: 2
+  stunTime: 0.5
   currentTeam: 0
 --- !u!212 &212235182580982136
 SpriteRenderer:
